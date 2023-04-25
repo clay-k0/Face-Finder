@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import Navigation from "../components/Navigation/navigation.component";
-import Logo from "../components/Logo/logo.component";
-import ImageLinkForm from "../components/ImageLinkForm/image-link-form.component";
-import Rank from "../components/Rank/rank.component";
 import ParticlesBg from "particles-bg";
+
 import FaceRecognition from "../components/FaceRecognition/face-recognition.component";
-import SignIn from "../components/SignIn/sign-in.component";
+import ImageLinkForm from "../components/ImageLinkForm/image-link-form.component";
+import Navigation from "../components/Navigation/navigation.component";
 import Register from "../components/Register/register.component";
-import "tachyons";
+import SignIn from "../components/SignIn/sign-in.component";
+import Logo from "../components/Logo/logo.component";
+import Rank from "../components/Rank/rank.component";
+
 import "./App.css";
 
 const returnClarifaiRequestOptions = (imageURL) => {
