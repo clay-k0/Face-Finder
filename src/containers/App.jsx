@@ -106,13 +106,13 @@ class App extends Component {
   render() {
     const { isSignedIn, imageURL, route, box } = this.state;
     return (
-      <div className="App">
+      <div className='App'>
         <ParticlesBg
           num={170}
-          type="cobweb"
+          type='cobweb'
           bg={true}
-          color="#FFFFFF"
-          className="particles"
+          color='#FFFFFF'
+          className='particles'
         />
         <Navigation
           isSignedIn={isSignedIn}
