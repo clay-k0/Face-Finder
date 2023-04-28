@@ -3,30 +3,52 @@ import React from "react";
 const Navigation = ({ onRouteChange, isSignedIn }) => {
   if (isSignedIn) {
     return (
-      <nav style={{ display: "flex", justifyContent: "flex-end" }}>
-        <p
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginTop: "20px",
+          marginRight: "20px",
+        }}
+      >
+        <button
           onClick={() => onRouteChange("signout")}
-          className="f3 link dim black pa3 pointer"
+          className='f4 link dim black pa2 pointer bg-transparent bn'
+          style={{ outline: "none", border: "1px solid black" }}
         >
           Sign Out
-        </p>
+        </button>
       </nav>
     );
   } else {
     return (
-      <nav style={{ display: "flex", justifyContent: "flex-end" }}>
-        <p
+      <nav
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginTop: "20px",
+          marginRight: "20px",
+          paddingBottom: "10px",
+        }}
+      >
+        <button
           onClick={() => onRouteChange("signin")}
-          className="f3 link dim black pa3 pointer"
+          className='f4 link dim black pa2 pointer bg-transparent bn'
+          style={{ outline: "none", border: "1px solid black" }}
         >
           Sign In
-        </p>
-        <p
+        </button>
+        <button
           onClick={() => onRouteChange("register")}
-          className="f3 link dim black pa3 pointer"
+          className='f4 link dim black pa2 pointer bg-transparent bn'
+          style={{
+            outline: "none",
+            border: "1px solid black",
+            marginLeft: "10px",
+          }}
         >
           Register
-        </p>
+        </button>
       </nav>
     );
   }

@@ -1,4 +1,5 @@
 .Tilt {
   width: 150px;
-  background: linear-gradient(89deg, rgb(193, 5, 192), rgb(37, 155, 158));
+  /* background: linear-gradient(89deg, rgb(193, 5, 192), rgb(37, 155, 158)); */
+  background-image: url("../../../public/background.png");
 }

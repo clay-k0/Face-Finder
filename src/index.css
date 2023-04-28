@@ -1,8 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Courier New", Courier, monospace;
-  background: linear-gradient(89deg, rgb(193, 5, 192), rgb(37, 155, 158));
+  /* background: linear-gradient(89deg, rgb(193, 5, 192), rgb(37, 155, 158)); */
+
+  background-image: url("../public/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  font-family: "AbovetheBeyondSerif-Regular", monospace;
+  font-size: 1.5rem;
+  font-style: normal;
 }
 
 button {
