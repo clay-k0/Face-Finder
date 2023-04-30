@@ -13,8 +13,11 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
       >
         <button
           onClick={() => onRouteChange("signout")}
-          className='f4 link dim black pa2 pointer bg-transparent bn'
-          style={{ outline: "none", border: "1px solid black" }}
+          className='f4 link dim pa2 pointer bg-transparent bn'
+          style={{
+            outline: "none",
+            border: "1px solid black",
+          }}
         >
           Sign Out
         </button>
@@ -33,18 +36,25 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
       >
         <button
           onClick={() => onRouteChange("signin")}
-          className='f4 link dim black pa2 pointer bg-transparent bn'
-          style={{ outline: "none", border: "1px solid black" }}
+          className='link dim pa2 pointer bg-transparent bn'
+          style={{
+            outline: "none",
+            border: "1px solid black",
+            borderRadius: "3px",
+            fontSize: "1.2rem",
+          }}
         >
           Sign In
         </button>
         <button
           onClick={() => onRouteChange("register")}
-          className='f4 link dim black pa2 pointer bg-transparent bn'
+          className='link dim pa2 pointer bg-transparent bn'
           style={{
             outline: "none",
             border: "1px solid black",
             marginLeft: "10px",
+            borderRadius: "3px",
+            fontSize: "1.2rem",
           }}
         >
           Register

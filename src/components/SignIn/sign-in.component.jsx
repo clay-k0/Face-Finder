@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./sign-in.styles.css";
 
 class SignIn extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class SignIn extends Component {
   };
 
   onSubmitSignIn = (event) => {
-    fetch("http://localhost:3001/signin", {
+    fetch("http://localhost:3000/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -51,8 +52,8 @@ class SignIn extends Component {
           margin: "20px auto",
           padding: "20px",
           textAlign: "center",
-          marginTop: "12rem",
-          fontStyle: "italic",
+          marginTop: "6rem",
+          width: "auto",
         }}
       >
         <main className='pa4 black-80'>
@@ -66,7 +67,10 @@ class SignIn extends Component {
                 <input
                   onChange={this.onEmailChange}
                   className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0'
-                  style={{ outline: "none", color: "black" }}
+                  style={{
+                    outline: "none",
+                    color: "black",
+                  }}
                   type='email'
                   name='email-address'
                   id='email-address'
@@ -78,8 +82,7 @@ class SignIn extends Component {
                 </label>
                 <input
                   onChange={this.onPasswordChange}
-                  className='b pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0'
-                  style={{ outline: "none" }}
+                  className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0'
                   type='password'
                   name='password'
                   id='password'
@@ -89,18 +92,17 @@ class SignIn extends Component {
             <div className=''>
               <input
                 onClick={this.onSubmitSignIn}
-                className='b ph3 b--black f4 pv2 input-reset ba b--black bg-transparent grow pointer f4 dib'
+                className='f3 ph3 b--black pv2 input-reset ba b--black bg-transparent grow pointer dib'
                 type='submit'
                 value='Sign in'
-                style={{ fontStyle: "italic" }}
               />
             </div>
             <div className='lh-copy mt3'>
               <p
                 onClick={() => onRouteChange("register")}
                 href='#0'
-                className='f4 link dim black db pointer'
-                style={{ paddingTop: "2rem" }}
+                className='link dim black pointer'
+                style={{ marginTop: "3.5rem" }}
               >
                 Register
               </p>

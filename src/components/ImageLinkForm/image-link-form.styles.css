@@ -9,14 +9,9 @@
   margin: 20px auto;
   padding: 20px;
   text-align: center;
-  width: 60%;
   font-style: italic;
 
-  transition: transform 0.4s ease-in-out;
-}
-
-.form:hover {
-  transform: scale(1.03);
+  width: 60%;
 }
 
 .button {
@@ -25,4 +20,12 @@
 
 .button:hover {
   transform: scale(1.9);
+}
+
+/* if on mobile */
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    max-width: 400px;
+  }
 }

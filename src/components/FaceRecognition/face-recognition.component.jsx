@@ -11,6 +11,7 @@ const FaceRecognition = ({ imageURL, box }) => {
           alt=''
           width='500px'
           height='auto'
+          title='Face'
         />
         <div
           className='bounding-box'

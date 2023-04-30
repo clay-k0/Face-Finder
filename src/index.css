@@ -7,9 +7,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
-  font-family: "AbovetheBeyondSerif-Regular", monospace;
+  font-family: "IBMPlexSans-Regular", Courier;
+  letter-spacing: 0.1rem;
   font-size: 1.5rem;
   font-style: normal;
+
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 button {

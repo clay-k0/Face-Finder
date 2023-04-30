@@ -22,7 +22,7 @@ const Logo = ({ onInputChange, onButtonSubmit }) => {
             className='w-30 grow f4 link ph3 pv2 dib b--light-pink white bg-light-pink '
             onClick={onButtonSubmit}
             style={{
-              fontSize: "1.5rem",
+              fontSize: "1.2rem",
               transition: "all 0.5s ease",
             }}
           >

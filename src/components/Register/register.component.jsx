@@ -22,7 +22,7 @@ class Register extends Component {
   };
 
   onSubmitSignIn = (event) => {
-    fetch("http://localhost:3001/register", {
+    fetch("http://localhost:3000/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -33,7 +33,7 @@ class Register extends Component {
     })
       .then((response) => response.json())
       .then((user) => {
-        if (user) {
+        if (user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange("home");
         }
@@ -55,8 +55,8 @@ class Register extends Component {
           margin: "20px auto",
           padding: "20px",
           textAlign: "center",
-          marginTop: "12rem",
-          fontStyle: "italic",
+          marginTop: "6rem",
+          width: "auto",
         }}
       >
         <main className='pa4 black-80'>
@@ -109,7 +109,6 @@ class Register extends Component {
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f4 dib'
                 type='submit'
                 value='Register'
-                style={{ fontStyle: "italic" }}
               />
             </div>
           </div>
