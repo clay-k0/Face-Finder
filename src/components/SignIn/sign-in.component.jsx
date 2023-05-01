@@ -37,12 +37,16 @@ class SignIn extends Component {
           if (user.id) {
             this.props.loadUser(user);
             this.props.onRouteChange("home");
+          } else {
+            this.setState({
+              errorMessage: "email or password is incorrect. please try again.",
+            });
           }
         })
         .catch((error) => {
           console.log(error);
           this.setState({
-            errorMessage: "email or password is incorrect. please try again.",
+            errorMessage: "an error occurred. please try again later.",
           });
         });
     }
