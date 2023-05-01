@@ -104,7 +104,7 @@ class App extends Component {
     this.setState({ imageURL: this.state.input });
 
     fetch(
-      `https://face-finder-backend.onrender.com/imageurl`,
+      `https://api.clarifai.com/v2/models/face-detection/outputs`,
       returnClarifaiRequestOptions(this.state.input)
     )
       .then((response) => response.json())
