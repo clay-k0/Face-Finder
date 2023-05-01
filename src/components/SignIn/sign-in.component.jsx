@@ -10,6 +10,7 @@ class SignIn extends Component {
       signInPassword: "",
       isEmailValid: true,
       isPasswordValid: true,
+      errorMessage: "",
     };
   }
 
@@ -37,6 +38,12 @@ class SignIn extends Component {
             this.props.loadUser(user);
             this.props.onRouteChange("home");
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.setState({
+            errorMessage: "email or password is incorrect. please try again.",
+          });
         });
     }
   };
@@ -69,7 +76,7 @@ class SignIn extends Component {
 
   render() {
     const { onRouteChange } = this.props;
-    const { isEmailValid, isPasswordValid } = this.state;
+    const { isEmailValid, isPasswordValid, errorMessage } = this.state;
     return (
       <article className='glass-sign-in br3 ba b--black-10 shadow-5 center'>
         <main className='pa4 black-80'>
@@ -112,6 +119,7 @@ class SignIn extends Component {
                 {!isPasswordValid && <p className='f6 red'>invalid password</p>}
               </div>
             </fieldset>
+            {errorMessage && <p className='f6 red'>{errorMessage}</p>}
             <div className=''>
               <input
                 onClick={this.onSubmitSignIn}
