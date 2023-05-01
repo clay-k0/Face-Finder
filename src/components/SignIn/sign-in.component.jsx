@@ -40,6 +40,7 @@ class SignIn extends Component {
           }
         })
         .catch((error) => {
+          console.log(error);
           this.setState({
             errorMessage: "email or password is incorrect. please try again.",
           });
