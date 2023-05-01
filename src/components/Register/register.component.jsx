@@ -55,7 +55,13 @@ class Register extends Component {
     if (!name) {
       isNameValid = false;
     }
-    if (!email) {
+    if (
+      !email ||
+      !email.includes("@") ||
+      !email.includes(".") ||
+      email.length < 5 ||
+      email.length > 100
+    ) {
       isEmailValid = false;
     }
     if (!password) {

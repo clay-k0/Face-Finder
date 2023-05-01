@@ -45,7 +45,13 @@ class SignIn extends Component {
     const { signInEmail, signInPassword } = this.state;
     let isEmailValid = true;
     let isPasswordValid = true;
-    if (!signInEmail) {
+    if (
+      !signInEmail ||
+      !signInEmail.includes("@") ||
+      !signInEmail.includes(".") ||
+      signInEmail.length < 5 ||
+      signInEmail.length > 100
+    ) {
       isEmailValid = false;
     }
     if (!signInPassword) {
