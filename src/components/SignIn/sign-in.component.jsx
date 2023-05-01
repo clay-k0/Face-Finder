@@ -87,9 +87,7 @@ class SignIn extends Component {
                   name='email-address'
                   id='email-address'
                 />
-                {!isEmailValid && (
-                  <p className='f6 red'>Please enter a valid email.</p>
-                )}
+                {!isEmailValid && <p className='f6 red'>invalid email</p>}
               </div>
               <div className={`mv3 ${isPasswordValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='password'>
@@ -105,9 +103,7 @@ class SignIn extends Component {
                   id='password'
                   onKeyDown={this.handleKeyDown}
                 />
-                {!isPasswordValid && (
-                  <p className='f6 red'>Please enter a valid password.</p>
-                )}
+                {!isPasswordValid && <p className='f6 red'>invalid password</p>}
               </div>
             </fieldset>
             <div className=''>
