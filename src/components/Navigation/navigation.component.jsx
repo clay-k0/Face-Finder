@@ -85,6 +85,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           <img
             src={process.env.PUBLIC_URL + "/github-icon.png"}
             alt='GitHub Repo'
+            title='GitHub Repo'
             style={{
               width: "30px",
               height: "30px",

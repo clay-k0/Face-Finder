@@ -36,6 +36,11 @@ label {
   margin-bottom: 0.5rem;
 }
 
+input[type="email"],
+input[type="password"] {
+  width: 18rem;
+}
+
 input[type="submit"] {
   font-size: 1.3rem;
   font-weight: bold;

@@ -8,6 +8,8 @@ class SignIn extends Component {
     this.state = {
       signInEmail: "",
       signInPassword: "",
+      isEmailValid: true,
+      isPasswordValid: true,
     };
   }
 
@@ -19,44 +21,64 @@ class SignIn extends Component {
   };
 
   onSubmitSignIn = (event) => {
-    fetch("https://face-finder-backend.onrender.com/signin", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword,
-      }),
-    })
-      .then((response) => response.json())
-      .then((user) => {
-        if (user.id) {
-          this.props.loadUser(user);
-          this.props.onRouteChange("home");
-        }
-      });
+    event.preventDefault();
+    if (this.validateInput()) {
+      fetch("https://face-finder-backend.onrender.com/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: this.state.signInEmail,
+          password: this.state.signInPassword,
+        }),
+      })
+        .then((response) => response.json())
+        .then((user) => {
+          if (user.id) {
+            this.props.loadUser(user);
+            this.props.onRouteChange("home");
+          }
+        });
+    }
+  };
+
+  validateInput = () => {
+    const { signInEmail, signInPassword } = this.state;
+    let isEmailValid = true;
+    let isPasswordValid = true;
+    if (!signInEmail) {
+      isEmailValid = false;
+    }
+    if (!signInPassword) {
+      isPasswordValid = false;
+    }
+    this.setState({ isEmailValid, isPasswordValid });
+    return isEmailValid && isPasswordValid;
   };
 
   handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      this.onSubmitSignIn();
+      this.onSubmitSignIn(event);
     }
   };
 
   render() {
     const { onRouteChange } = this.props;
+    const { isEmailValid, isPasswordValid } = this.state;
     return (
       <article className='glass-sign-in br3 ba b--black-10 shadow-5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
               <legend className='f1 fw6 ph0 mh0'>sign in</legend>
-              <div className='mt3'>
+              <div className={`mt3 ${isEmailValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
                   email
                 </label>
                 <input
                   onChange={this.onEmailChange}
-                  className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0'
+                  className={`pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0 ${
+                    isEmailValid ? "" : "invalid"
+                  }`}
                   style={{
                     outline: "none",
                     color: "black",
@@ -65,19 +87,27 @@ class SignIn extends Component {
                   name='email-address'
                   id='email-address'
                 />
+                {!isEmailValid && (
+                  <p className='f6 red'>Please enter a valid email.</p>
+                )}
               </div>
-              <div className='mv3'>
+              <div className={`mv3 ${isPasswordValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='password'>
                   password
                 </label>
                 <input
                   onChange={this.onPasswordChange}
-                  className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent w-100 outline-0'
+                  className={`pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent outline-0 ${
+                    isPasswordValid ? "" : "invalid"
+                  }`}
                   type='password'
                   name='password'
                   id='password'
                   onKeyDown={this.handleKeyDown}
                 />
+                {!isPasswordValid && (
+                  <p className='f6 red'>Please enter a valid password.</p>
+                )}
               </div>
             </fieldset>
             <div className=''>
