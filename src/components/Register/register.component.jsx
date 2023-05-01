@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./register.styles.css";
 
 class Register extends Component {
   constructor(props) {
@@ -42,30 +43,14 @@ class Register extends Component {
 
   render() {
     return (
-      <article
-        className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center'
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.15)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          borderRadius: "10px",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-          color: "#fff",
-          margin: "20px auto",
-          padding: "20px",
-          textAlign: "center",
-          marginTop: "6rem",
-          width: "auto",
-        }}
-      >
+      <article className='glass-register br3 ba b--black-10 shadow-5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
-              <legend className='f1 fw6 ph0 mh0'>Register</legend>
+              <legend className='f1 fw6 ph0 mh0'>register</legend>
               <div className='mt3'>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
-                  Name
+                  name
                 </label>
                 <input
                   className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent hover-white w-100 outline-0'
@@ -78,7 +63,7 @@ class Register extends Component {
               </div>
               <div className='mt3'>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
-                  Email
+                  email
                 </label>
                 <input
                   className='pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent hover-white w-100 outline-0'
@@ -91,7 +76,7 @@ class Register extends Component {
               </div>
               <div className='mv3'>
                 <label className='db fw6 lh-copy f4' htmlFor='password'>
-                  Password
+                  password
                 </label>
                 <input
                   className='b pa2 b--black f4 input-reset ba bg-transparent hover-bg-transparent hover-white w-100 outline-0'
@@ -108,7 +93,7 @@ class Register extends Component {
                 onClick={this.onSubmitSignIn}
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f4 dib'
                 type='submit'
-                value='Register'
+                value='register'
               />
             </div>
           </div>

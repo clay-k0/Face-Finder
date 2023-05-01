@@ -8,6 +8,7 @@ import Register from "../components/Register/register.component";
 import SignIn from "../components/SignIn/sign-in.component";
 import Logo from "../components/Logo/logo.component";
 import Rank from "../components/Rank/rank.component";
+import About from "../components/About/about.component";
 
 import "./App.css";
 
@@ -166,6 +167,8 @@ class App extends Component {
           </div>
         ) : route === "signin" ? (
           <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+        ) : route === "about" ? (
+          <About />
         ) : (
           <Register
             loadUser={this.loadUser}

@@ -6,7 +6,7 @@ const Logo = ({ onInputChange, onButtonSubmit }) => {
     <div>
       <p className='f3 white'>
         {
-          "This Magic Scanner will detect faces in your pictures. Give it a try!"
+          "this magic scanner will detect faces in your pictures. give it a try!"
         }
       </p>
       <div className='center'>
@@ -15,7 +15,7 @@ const Logo = ({ onInputChange, onButtonSubmit }) => {
             className='f4 pa2 w-70 center b--white bg-white tc focus-outline'
             style={{ outlineColor: "#fff" }}
             type='text'
-            placeholder='Enter Image URL'
+            placeholder='enter image url'
             onChange={onInputChange}
           />
           <button
@@ -26,7 +26,7 @@ const Logo = ({ onInputChange, onButtonSubmit }) => {
               transition: "all 0.5s ease",
             }}
           >
-            Detect
+            detect
           </button>
         </div>
       </div>

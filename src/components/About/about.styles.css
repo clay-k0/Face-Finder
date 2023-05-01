@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -15vh;
+}
+
+.glass-about {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  color: #000000;
+  margin: 20px auto;
+  padding: 2rem;
+  text-align: center;
+  width: 95%;
+  max-width: 1200px;
+  margin-top: 10vh;
+}
+
+.glass-about p {
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .glass-about {
+    padding: 1rem;
+  }
+
+  .glass-about p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .glass-about {
+    padding: 0.5rem;
+  }
+
+  .glass-about p {
+    font-size: 0.9rem;
+  }
+}

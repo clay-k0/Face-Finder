@@ -36,33 +36,23 @@ class SignIn extends Component {
       });
   };
 
+  handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      this.onSubmitSignIn();
+    }
+  };
+
   render() {
     const { onRouteChange } = this.props;
     return (
-      <article
-        className='br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center'
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.15)",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)",
-          borderRadius: "10px",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
-          boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-          color: "#fff",
-          margin: "20px auto",
-          padding: "20px",
-          textAlign: "center",
-          marginTop: "6rem",
-          width: "auto",
-        }}
-      >
+      <article className='glass-sign-in br3 ba b--black-10 shadow-5 center'>
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
-              <legend className='f1 fw6 ph0 mh0'>Sign In</legend>
+              <legend className='f1 fw6 ph0 mh0'>sign in</legend>
               <div className='mt3'>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
-                  Email
+                  email
                 </label>
                 <input
                   onChange={this.onEmailChange}
@@ -78,7 +68,7 @@ class SignIn extends Component {
               </div>
               <div className='mv3'>
                 <label className='db fw6 lh-copy f4' htmlFor='password'>
-                  Password
+                  password
                 </label>
                 <input
                   onChange={this.onPasswordChange}
@@ -86,6 +76,7 @@ class SignIn extends Component {
                   type='password'
                   name='password'
                   id='password'
+                  onKeyDown={this.handleKeyDown}
                 />
               </div>
             </fieldset>
@@ -94,7 +85,7 @@ class SignIn extends Component {
                 onClick={this.onSubmitSignIn}
                 className='f3 ph3 b--black pv2 input-reset ba b--black bg-transparent grow pointer dib'
                 type='submit'
-                value='Sign in'
+                value='sign in'
               />
             </div>
             <div className='lh-copy mt3'>
@@ -104,7 +95,7 @@ class SignIn extends Component {
                 className='link dim black pointer'
                 style={{ marginTop: "3.5rem" }}
               >
-                Register
+                register
               </p>
             </div>
           </div>

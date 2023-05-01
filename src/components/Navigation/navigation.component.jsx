@@ -19,7 +19,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
             border: "1px solid black",
           }}
         >
-          Sign Out
+          sign out
         </button>
       </nav>
     );
@@ -44,7 +44,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
             fontSize: "1.2rem",
           }}
         >
-          Sign In
+          sign in
         </button>
         <button
           onClick={() => onRouteChange("register")}
@@ -57,8 +57,40 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
             fontSize: "1.2rem",
           }}
         >
-          Register
+          register
         </button>
+        <button
+          onClick={() => onRouteChange("about")}
+          className='link dim pa2 pointer bg-transparent bn'
+          style={{
+            outline: "none",
+            border: "1px solid black",
+            marginLeft: "10px",
+            borderRadius: "3px",
+            fontSize: "1.2rem",
+          }}
+        >
+          about
+        </button>
+        <a
+          href='https://github.com/clay-k0/face-finder'
+          target='_blank'
+          rel='noopener noreferrer'
+          style={{
+            position: "absolute",
+            bottom: "10px",
+            right: "10px",
+          }}
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/github-icon.png"}
+            alt='GitHub Repo'
+            style={{
+              width: "30px",
+              height: "30px",
+            }}
+          />
+        </a>
       </nav>
     );
   }

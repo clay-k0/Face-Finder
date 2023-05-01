@@ -9,7 +9,7 @@ article {
   height: 35rem;
 }
 
-.glass-sign-in {
+.glass-register {
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -83,37 +83,37 @@ a:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .glass-sign-in {
+  .glass-register {
     margin-top: 5rem;
     width: 90%;
     padding: 10px;
     height: auto;
   }
 
-  .glass-sign-in h1 {
+  .glass-register h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
-  .glass-sign-in label {
+  .glass-register label {
     font-size: 1rem;
     margin-bottom: 0.25rem;
   }
 
-  .glass-sign-in input[type="email"],
-  .glass-sign-in input[type="password"] {
+  .glass-register input[type="email"],
+  .glass-register input[type="password"] {
     font-size: 1rem;
     padding: 0.5rem;
     margin-bottom: 1rem;
   }
 
-  .glass-sign-in input[type="submit"] {
+  .glass-register input[type="submit"] {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
   }
 
-  .glass-sign-in a {
+  .glass-register a {
     font-size: 1rem;
     margin-top: 0.5rem;
   }
