@@ -93,9 +93,7 @@ class Register extends Component {
                   id='name'
                   onChange={this.onNameChange}
                 />
-                {!isNameValid && (
-                  <p className='f6 red'>Please enter a valid name.</p>
-                )}
+                {!isNameValid && <p className='f6 red'>invalid name</p>}
               </div>
               <div className={`mt3 ${isEmailValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
@@ -111,9 +109,7 @@ class Register extends Component {
                   id='email-address'
                   onChange={this.onEmailChange}
                 />
-                {!isEmailValid && (
-                  <p className='f6 red'>Please enter a valid email.</p>
-                )}
+                {!isEmailValid && <p className='f6 red'>invalid email</p>}
               </div>
               <div className={`mv3 ${isPasswordValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='password'>
@@ -130,9 +126,7 @@ class Register extends Component {
                   onChange={this.onPasswordChange}
                   onKeyDown={this.handleKeyDown}
                 />
-                {!isPasswordValid && (
-                  <p className='f6 red'>Please enter a valid password.</p>
-                )}
+                {!isPasswordValid && <p className='f6 red'>invalid password</p>}
               </div>
             </fieldset>
             <div className=''>
