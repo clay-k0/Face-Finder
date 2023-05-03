@@ -1,6 +1,3 @@
-import React from "react";
-import "./face-recognition.styles.css";
-
 const FaceRecognition = ({ imageURL, box }) => {
   return (
     <div className='center ma'>
@@ -13,19 +10,20 @@ const FaceRecognition = ({ imageURL, box }) => {
           height='auto'
           title='Face'
         />
-        <div
-          className='bounding-box'
-          title='Face'
-          style={{
-            top: box.topRow,
-            right: box.rightColumn,
-            bottom: box.bottomRow,
-            left: box.leftColumn,
-          }}
-        ></div>
+        {box.map((faceLocation, i) => (
+          <div
+            key={i}
+            className='bounding-box'
+            title='Face'
+            style={{
+              top: faceLocation.topRow,
+              right: faceLocation.rightColumn,
+              bottom: faceLocation.bottomRow,
+              left: faceLocation.leftColumn,
+            }}
+          ></div>
+        ))}
       </div>
     </div>
   );
 };
-
-export default FaceRecognition;

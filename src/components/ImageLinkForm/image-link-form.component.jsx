@@ -1,7 +1,7 @@
 import React from "react";
 import "./image-link-form.styles.css";
 
-const Logo = ({ onInputChange, onButtonSubmit }) => {
+const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
       <p className='f3 white'>
@@ -34,4 +34,4 @@ const Logo = ({ onInputChange, onButtonSubmit }) => {
   );
 };
 
-export default Logo;
+export default ImageLinkForm;
