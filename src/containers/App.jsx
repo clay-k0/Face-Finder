@@ -77,23 +77,25 @@ class App extends Component {
     });
   };
 
-  calculateFaceLocation = (data) => {
-    const clarifaiFace =
-      data.outputs[0].data.regions[0].region_info.bounding_box;
+  calculateFaceLocations = (data) => {
+    const regions = data.outputs[0].data.regions;
     const image = document.getElementById("inputImage");
     const width = Number(image.width);
     const height = Number(image.height);
 
-    return {
-      leftColumn: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightColumn: width - clarifaiFace.right_col * width,
-      bottomRow: height - clarifaiFace.bottom_row * height,
-    };
+    return regions.map((region) => {
+      const boundingBox = region.region_info.bounding_box;
+      return {
+        leftCol: boundingBox.left_col * width,
+        topRow: boundingBox.top_row * height,
+        rightCol: width - boundingBox.right_col * width,
+        bottomRow: height - boundingBox.bottom_row * height,
+      };
+    });
   };
 
-  displayFaceBox = (box) => {
-    this.setState({ box: box });
+  displayFaceBoxes = (boxes) => {
+    this.setState({ boxes: boxes });
   };
 
   onInputChange = (event) => {
@@ -123,7 +125,8 @@ class App extends Component {
             })
             .catch((err) => console.log(err));
         }
-        this.displayFaceBox(this.calculateFaceLocation(response));
+        const faceLocations = this.calculateFaceLocations(response);
+        this.setState({ faceLocations });
       })
       .catch((err) => console.log(err));
   };
