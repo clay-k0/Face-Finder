@@ -83,16 +83,18 @@ class App extends Component {
     const width = Number(image.width);
     const height = Number(image.height);
 
-    const faceLocations = regions.map(({ region_info: { bounding_box } }) => {
+    if (!Array.isArray(regions)) {
+      return [];
+    }
+
+    return regions.map((region) => {
       return {
-        leftColumn: bounding_box.left_col * width,
-        topRow: bounding_box.top_row * height,
-        rightColumn: width - bounding_box.right_col * width,
-        bottomRow: height - bounding_box.bottom_row * height,
+        leftCol: region.region_info.bounding_box.left_col * width,
+        topRow: region.region_info.bounding_box.top_row * height,
+        rightCol: width - region.region_info.bounding_box.right_col * width,
+        bottomRow: height - region.region_info.bounding_box.bottom_row * height,
       };
     });
-
-    return faceLocations;
   };
 
   displayFaceBox = (faceLocations) => {
