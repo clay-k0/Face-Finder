@@ -84,7 +84,7 @@ class Register extends Component {
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
-              <legend className='f1 fw6 ph0 mh0'>register</legend>
+              <legend className='f1 fw6 ph0 mh0'>Register</legend>
               <div className={`mt3 ${isNameValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='name'>
                   name
@@ -142,6 +142,19 @@ class Register extends Component {
                 type='submit'
                 value='register'
               />
+            </div>
+            <div className='lh-copy mt3'>
+              <p>
+                Already have an account?{" "}
+                <span
+                  onClick={() => this.props.onRouteChange("signin")}
+                  href='#0'
+                  className='link dim blue pointer underline'
+                  style={{ marginTop: "3.5rem" }}
+                >
+                  Sign in now
+                </span>
+              </p>
             </div>
           </div>
         </main>

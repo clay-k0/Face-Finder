@@ -86,7 +86,7 @@ class SignIn extends Component {
         <main className='pa4 black-80'>
           <div className='measure'>
             <fieldset id='sign_up' className='ba b--transparent ph0 mh0'>
-              <legend className='f1 fw6 ph0 mh0'>sign in</legend>
+              <legend className='f1 fw6 ph0 mh0'>Sign In</legend>
               <div className={`mt3 ${isEmailValid ? "" : "invalid"}`}>
                 <label className='db fw6 lh-copy f4' htmlFor='email-address'>
                   email
@@ -129,17 +129,20 @@ class SignIn extends Component {
                 onClick={this.onSubmitSignIn}
                 className='f3 ph3 b--black pv2 input-reset ba b--black bg-transparent grow pointer dib'
                 type='submit'
-                value='sign in'
+                value='Log in'
               />
             </div>
             <div className='lh-copy mt3'>
-              <p
-                onClick={() => onRouteChange("register")}
-                href='#0'
-                className='link dim black pointer'
-                style={{ marginTop: "3.5rem" }}
-              >
-                register
+              <p>
+                Don't have account?{" "}
+                <span
+                  onClick={() => onRouteChange("register")}
+                  href='#0'
+                  className='link dim blue pointer underline'
+                  style={{ marginTop: "3.5rem" }}
+                >
+                  Register
+                </span>
               </p>
             </div>
           </div>
