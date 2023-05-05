@@ -134,7 +134,7 @@ class SignIn extends Component {
             </div>
             <div className='lh-copy mt3'>
               <p>
-                Don't have account?{" "}
+                Don't have an account?{" "}
                 <span
                   onClick={() => onRouteChange("register")}
                   href='#0'
