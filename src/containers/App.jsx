@@ -13,8 +13,8 @@ import About from "../components/About/about.component";
 import "./App.css";
 
 const returnClarifaiRequestOptions = (imageURL) => {
-  const PAT = process.env.CLARIFAI_PAT;
-  const USER_ID = process.env.CLARIFAI_USER_ID;
+  const PAT = "91348081a0d14b3cbb21d2ddb84f5171";
+  const USER_ID = "2lcxacnzirfr";
   const APP_ID = "face-finder-app";
   const IMAGE_URL = imageURL;
 
