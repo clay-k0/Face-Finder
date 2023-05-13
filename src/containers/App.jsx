@@ -108,9 +108,11 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({ imageURL: this.state.input });
 
+    const requestOptions = returnClarifaiRequestOptions(this.state.input);
+
     fetch(
       `https://api.clarifai.com/v2/models/face-detection/outputs`,
-      returnClarifaiRequestOptions(this.state.input)
+      requestOptions
     )
       .then((response) => response.json())
       .then((response) => {
