@@ -13,9 +13,9 @@ import About from "../components/About/about.component";
 import "./App.css";
 
 const returnClarifaiRequestOptions = (imageURL) => {
-  const PAT = process.env.CLARIFAI_PAT;
+  // const PAT = process.env.CLARIFAI_PAT;
   const USER_ID = process.env.CLARIFAI_USER_ID;
-  const APP_ID = "face-finder-app";
+  const APP_ID = process.env.CLARIFAI_APP_ID;
   const IMAGE_URL = imageURL;
 
   const raw = JSON.stringify({
@@ -38,7 +38,7 @@ const returnClarifaiRequestOptions = (imageURL) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      Authorization: "Key " + PAT,
+      Authorization: "Key " + APP_ID,
     },
     body: raw,
   };
