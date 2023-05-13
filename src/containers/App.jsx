@@ -38,7 +38,7 @@ const returnClarifaiRequestOptions = (imageURL) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      Authorization: "Key 7df8204051954141b0da35c787ec2d2a",
+      Authorization: `Key ${APP_ID}`,
     },
     body: raw,
   };
